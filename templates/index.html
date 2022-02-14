@@ -1,0 +1,89 @@
+{% comment %} 
+
+This html page takes the text/ transcript input from the user along with the gender preference 
+for generating output voice.
+
+{% endcomment %}
+
+<!doctype html>
+<html lang="en">
+  <style>
+    body {
+      background-image: url('static/5.jpg');
+      background-repeat: no-repeat;
+      background-size: 1500px 700px;
+    }
+    </style>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Audio Generator</title>
+  </head>
+  <body>
+    <div style="color:white">
+      <br><br><br>
+      <h1 style="
+          position:absolute;
+          left:700px;
+          top:70px"
+      >Text to video Generator</h1>
+      <br><br><br><br>
+      <h6 style="
+          position:absolute;
+          left:700px;
+          top:160px"
+      >Welcome to this application! 
+      <br>You can type your text in the white box, select whether you want the output voice as 
+      <br>male or female voice and press Generate. The video will be generated and displayed 
+      <br>automatically. You can also upload a file directly and use the text in the file.</h6>
+    </div>
+    <div align="center" style="color:white">
+    <form method="POST" class="post-form" enctype = "multipart/form-data" action = "next_page">
+      {% csrf_token %}
+      <textarea id="input_text" name="input_text" rows="6" cols="40" placeholder="Enter you text here" style="
+            position:absolute;
+            top:300px;
+            left:700px;"
+      ></textarea>
+      <br><br>
+      {{ form.as_p }}
+      <input type="file" name="fileupload" value="fileupload" id="fileupload" style="
+            position:absolute;
+            top:500px;
+            left:700px
+      ">
+      <label for="fileupload" style="
+            position:absolute;
+            top:465px;
+            left:850px
+      "> OR</label>
+      <input type="radio" name="gender" id="male" value="Male" style="
+         position:absolute;
+         top:350px;
+         left:1100px"> 
+      <h6 style="
+         position:absolute;
+         top:345px;
+         left:1125px">Male Voice</h6>
+      <input type="radio" name="gender" id="female" value="Female" checked style="
+         position:absolute;
+         top:390px;
+         left:1100px"> 
+      <h6 style="
+         position:absolute;
+         top:385px;
+         left:1125px">Female Voice</h6>
+      <input type="submit" value="Submit" style="
+           position:absolute;
+           left:1100px;
+           top:500px">
+
+    </form>
+  </div>
+  </body>
+</html>

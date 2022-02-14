@@ -1,0 +1,41 @@
+{% comment %} 
+
+This html page displays a thank you message for using the application.
+
+{% endcomment %}
+
+<!doctype html>
+<html lang="en">
+    <style>
+        body {
+          background-image: url('static/1.jpg');
+          background-repeat: no-repeat;
+          background-size: 1500px 700px;
+        }
+    </style>
+<head>
+    <title>Video Generator</title>
+</head>
+<body>
+    
+<h1 style = "
+   position:absolute;
+   left:500px;
+   top:200px;
+   color:white">Thank you for using the applcation!</h1>
+<h3 style = "
+   position:absolute;
+   left:600px;
+   top:250px;
+   color:white">Click on preview to view the video.</h3>
+
+<form method="POST" action = "preview_video">
+    {% csrf_token %}
+<input type="Submit" value="Preview" style = " 
+   position:absolute;
+   left:700px;
+   top:330px;
+   ">
+</form>
+</body>
+</html>

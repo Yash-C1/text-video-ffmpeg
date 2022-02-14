@@ -1,0 +1,59 @@
+{% comment %} 
+
+This html page takes the video and/or audio input from the user.
+
+{% endcomment %}
+
+<!doctype html>
+<html lang="en">
+    <style>
+        body {
+          background-image: url('static/9.jpg');
+          background-repeat: no-repeat;
+          background-size: 1500px 700px;
+        }
+    </style>
+<head>
+    <title>Video Generator</title>
+</head>
+<body>
+    <div style="color:white">
+    <h1 style="
+        position:absolute;
+        left:100px;
+        top:100px
+    ">Add the video file here! </h1>
+    <h1 style = "
+        position:absolute;
+        left:100px;
+        top:240px;"> If you don't want to use the auto generated voice from 
+        <br>the transcript, you can give another voice input.</h1>
+    <h3 style = "
+        position:absolute;
+        left:100px;
+        top:150px;"> Please select the video.</h3>
+    <h3 style = "
+        position:absolute;
+        left:100px;
+        top:330px;"> Please select the audio.</h3>
+<form method="POST" class="post-form" enctype = "multipart/form-data" action = "last_page">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="file" name="videoupload" value="videoupload" id="videoupload" style = "
+        position:absolute;
+        left:100px;
+        top:200px">
+    <input type="file" name="audioupload" value="audioupload" id="audioupload" style = "
+        position:absolute;
+        left:100px;
+        top:380px">
+    <br><br><br>
+    <input type="submit" value="Merge" style = "
+        position:absolute;
+        left:100px;
+        top:480px">
+
+</form>
+</div>
+</body>
+</html>
