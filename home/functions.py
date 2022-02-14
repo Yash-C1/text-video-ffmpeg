@@ -80,7 +80,7 @@ def merge_with_generated_audio():
 
 # Merging user uploaded audio and video using ffmpeg.
 def merge_with_uploaded_audio():
-    cmd = "ffmpeg -i uploads/input_video_without_sound.mp4 -i uploads/input_audio.mp3 -c copy 'outputs/final_op_video.mp4'"
+    cmd = "ffmpeg -i uploads/input_video_without_sound.mp4 -i uploads/input_audio.mp3 -vcodec copy 'outputs/final_op_video.mp4'"
     p = subprocess.Popen(shlex.split(cmd), stdin=subprocess.PIPE, creationflags=subprocess.CREATE_NO_WINDOW)
     
 
