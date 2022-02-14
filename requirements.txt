@@ -1,0 +1,4 @@
+ffmpeg-python
+PyPDF2
+gTTS
+pyttsx3
