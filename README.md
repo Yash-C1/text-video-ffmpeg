@@ -9,5 +9,6 @@ Note-
 
 How to run the application?  
 ---
-Just run the command 'python manage.py runserver' in the terminal.
+1. If the libraries imported in functions.py are not installed on your device, install them simply using 'pip install library-name' in the terminal. 
+2. Run the command 'python manage.py runserver' in the terminal.
 
